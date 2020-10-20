@@ -1,9 +1,7 @@
 
 body{
   font-family: 'Lato', 'Arial', sans-serif;
-  
-
-margin-top:40px;
+  margin-top: 0px;
 }
 
 .big{
@@ -209,7 +207,7 @@ form{
 	font-size:16px;
 	color:#555;
 }
-	
+
 .buttons{
 	display:flex;
 	justify-content:space-between;
@@ -251,7 +249,7 @@ border:5px solid #fff;
 	color:#555;
 	outline:none;
 	overflow:hidden;
-	
+
 }
 .option option{
 	font-size:20px;
@@ -291,4 +289,3 @@ button{
 }
 button:hover{
 	background-color:#5390F5;
-	

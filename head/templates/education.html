@@ -1,7 +1,6 @@
 {% extends "layout2.html" %}
-{% block content %} 
-		<section class="wform">
-		<div class="regform"><h1>Education Details</h1></div>
+{% block content %}
+		<div class="regform" style="border-radius:0px"><h1>Education Details</h1></div>
 		<div class="main form-group">
 		<form method="POST" action="">
 		{{ form.hidden_tag() }}
@@ -11,15 +10,15 @@
 			{{ form.c10.label }}
 			{{ form.c10 }}
 			<br>
-			{{form.g10.label }} 
+			{{form.g10.label }}
 			{{ form.g10 }}
 			<br>
-			{{ form.y10.label }} 
+			{{ form.y10.label }}
 			{{ form.y10 }}
 			<br>
 		</div>
 		<h2 class="name">CLASS 12</h2>
-		
+
 			{{ form.c12.label }}
 			{{ form.c12 }}
 			<br>
@@ -34,7 +33,7 @@
 			{{ form.g.label }}
 			{{ form.g }}
 			<br>
-			{{form.gg.label }} 
+			{{form.gg.label }}
 			{{ form.gg }}
 			<br>
 			{{ form.yg.label }}
@@ -44,10 +43,10 @@
 			{{ form.pg.label }}
 			{{ form.pg }}
 			<br>
-			{{form.gpg.label }} 
+			{{form.gpg.label }}
 			{{ form.gpg }}
 			<br>
-			{{ form.ypg.label }} 
+			{{ form.ypg.label }}
 			{{ form.ypg }}
 			<br>
 		</font>
@@ -60,6 +59,4 @@
 		</div>
 		</form>
 		</div>
-		
-		</section>
 {% endblock content %}

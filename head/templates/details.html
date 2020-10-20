@@ -1,52 +1,59 @@
-{% extends "layout2.html" %}
-{% block content %} 
-
-		<section class="wform">
-		<div class="regform"><h1>Basic Details</h1></div>
-		<div class="main">
-		<form method="POST" action="">
-		<font color='white'><b>
+{% extends "layout2.html" %} {% block content %}
+  <form method="POST" action="">
 		{{ form.hidden_tag() }}
-		<div id="name">
-		<h2 class="name">Name</h2>
-		<label class="firstlabel">First name</label>
-			{{ form.firstname }}
-			<br>
-		<label class="lastlabel">  Last name</label>	
-			{{form.lastname}}
-		</div>
-		<h2 class="name">Profession</h2>
-			{{ form.profession }}
-		
+		<div class="container" style="margin:100px">
+		      <div class="row">
+		        <div class="col-md-8 order-md-1">
+		          <h2 class="mb-3">Basic Details</h2>
 
-		<h2 class="name">Email</h2>
-			{{ form.email }}
+		            <hr class="mb-4">
+		          <form class="needs-validation" novalidate>
+		            <div class="row">
+		              <div class="col-md-6 mb-3">
+		                <label for="firstName">First name</label>
+										{{ form.firstname (class="form-control") }}
+		              </div>
+		              <div class="col-md-6 mb-3">
+		                <label for="lastName">Last name</label>
+											{{form.lastname (class="form-control")}}
+		              </div>
+		            </div>
 
-		<h2 class="name">Phone</h2>
-		<label class="area_code">Area Code</label><input class="code" name="area_code">  
-		
-		<br>
-			{{ form.phone.label }}
-			{{ form.phone }}
+		            <div class="mb-3">
+		              <label for="profession">Profession</label>
+										{{ form.profession (class="form-control")}}
+		            </div>
 
-		<div id="name">
-		<h2 class="name">City</h2>
-			{{ form.city }}
-		<h2 class="name">State/Province</h2>
-			{{ form.state }}
-		</div>
-		</font></b>
-		<br>
+		            <div class="mb-3">
+		              <label for="email">Email</label>
+									{{form.email (class="form-control")}}
+		              <!-- <input type="email" class="form-control" id="email" placeholder="you@example.com"> -->
+		            </div>
 
-		</label>
-		<br>
-		<br>
-		<div class="buttons">
-		<div><a id="first-link" onclick="window.location.href='{{ url_for('home') }}';">Back</a></div>
-		{{ form.submit(class="btn btn-default btn-block signin-btn", id="first-link") }}
-		</div>
+		            <div class="mb-3">
+		              <label for="phone">Phone</label>
+									{{ form.phone (class="form-control")}}
+		            </div>
 
-		</form>
 
-		</section>
-{% endblock content %}
+
+		            <div class="row">
+		              <div class="col-md-5 mb-3">
+		                <label for="city">City</label>
+										{{ form.city (class="form-control")}}
+		              </div>
+		              <div class="col-md-4 mb-3">
+		                <label for="state">State</label>
+										{{ form.state (class="form-control")}}
+		              </div>
+		              <div class="col-md-3 mb-3">
+		                <label for="zip">Zip</label>
+										{{ form.zip (class="form-control")}}
+		              </div>
+		            </div>
+		            <p style="margin-top:30px">
+		                <a class="btn btn-secondary btn-lg" role="button" style="color:white" onclick="window.location.href='{{ url_for('home') }}';">Back</a>
+										 {{ form.submit(class="btn btn-primary btn-lg") }}
+		            </p>
+		          </form>
+  {% endblock content %}

@@ -15,84 +15,85 @@
     crossorigin="anonymous">
   <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
   <style>
-footer {
+  footer {
     background-color: #333;
     padding: 30px;
     font-size: 80%;
-}
+  }
 
-.footer-nav {
+  .footer-nav {
     list-style: none;
     float: left;
-}
+  }
 
-.social-links {
+  .social-links {
     list-style: none;
     float: right;
-}
+  }
 
-.footer-nav li,
-.social-links li {
+  .footer-nav li,
+  .social-links li {
     display: inline-block;
     margin-right: 20px;
-}
+  }
 
-.footer-nav li:last-child,
-.social-links li:last-child {
+  .footer-nav li:last-child,
+  .social-links li:last-child {
     margin-right: 0;
-}
+  }
 
-.footer-nav li a:link,
-.footer-nav li a:visited,
-.social-links li a:link,
-.social-links li a:visited {
+  .footer-nav li a:link,
+  .footer-nav li a:visited,
+  .social-links li a:link,
+  .social-links li a:visited {
     text-decoration: none;
     border: 0;
     color: #888;
     -webkit-transition: color 0.2s;
     transition: color 0.2s;
-}
+  }
 
-.footer-nav li a:hover,
-.footer-nav li a:active {
+  .footer-nav li a:hover,
+  .footer-nav li a:active {
     color: #ddd;
-}
+  }
 
-.social-links li a:link,
-.social-links li a:visited {
+  .social-links li a:link,
+  .social-links li a:visited {
     font-size: 160%;
-}
+  }
 
-.ion-social-facebook,
-.ion-social-twitter,
-.ion-social-googleplus,
-.ion-social-instagram {
+  .ion-social-facebook,
+  .ion-social-twitter,
+  .ion-social-googleplus,
+  .ion-social-instagram {
     -webkit-transition: color 0.2s;
     transition: color 0.2s;
-}
+  }
 
-.ion-social-facebook:hover {
+  .ion-social-facebook:hover {
     color: #3b5998;
-}
+  }
 
-.ion-social-twitter:hover {
+  .ion-social-twitter:hover {
     color: #00aced;
-}
+  }
 
-.ion-social-googleplus:hover {
+  .ion-social-googleplus:hover {
     color: #dd4b39;
-}
+  }
 
-.ion-social-instagram:hover {
+  .ion-social-instagram:hover {
     color: #517fa4;
-}
-footer p {
+  }
+
+  footer p {
     color: #888;
   }
-footer{
-  color: #333;
-}
 
+  footer {
+    color: #333;
+  }
   </style>
 
   <!-- Font Awesome -->
@@ -111,11 +112,11 @@ footer{
     crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body style="margin-top:0px">
   <!-- Navigation bar -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="">
-      <img src="{{ url_for('static', filename='file.png') }}" alt="" style="height:40px;width:40px"> YourCV
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{{ url_for('home')}}">
+      <img src="{{ url_for('static', filename='file.png') }}" alt="" style="height:40px;width:40px">      YourCV
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -125,62 +126,33 @@ footer{
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+          <a class="nav-link" href="{{ url_for('details1') }}"><button type="button" class="btn btn-link "  name="button">1. Basic Details</button></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('SignIn') }}">My Account</a>
+          <a class="nav-link" href="{{ url_for('education1') }}"><button type="button" class="btn btn-link "  name="button">2. Education</button></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('SignIn') }}">Log In</a>
+          <a class="nav-link" href="{{ url_for('skills1') }}"><button type="button" class="btn btn-link"  name="button">3. Skills</button></a>
         </li>
         <li class="nav-item">
-          <a class="btn btn-primary" href="{{ url_for('SignUp') }}">Sign Up</a>
+          <a class="nav-link" href="{{ url_for('workexp1') }}"><button type="button" class="btn btn-link "  name="button">4. Work Experience</button></a>
         </li>
       </ul>
     </div>
   </nav>
   <!-- End of Navigation Bar -->
   <!--flash-->
-  		  <nav class="navbar2 navbar-expand-lg navbar-light">
-			<a class="navbar-brand" href="">
-			  
-			</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-			  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			  <span class="navbar-toggler-icon"></span>
-			</button>
-
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			  <ul class="navbar-nav ml-auto">
-				<li class="nav-item active">
-		    	  <a class="nav-link" href="{{ url_for('details1') }}">1.Basic Details  -></a>
-				</li>
-		   </b>
-				<li class="nav-item">
-				  <a class="nav-link" href="{{ url_for('education1') }}">2.Education  -></a>
-				</li>
-				<li class="nav-item">
-				  <a class="nav-link" href="{{ url_for('skills1') }}">3.Skills</a>
-				</li>
-				<li class="nav-item">
-				  <a class="nav-link" href="{{ url_for('workexp1') }}">4.Work History  -></a>
-				</li>
-			  </ul>
-			</div>
-		  </nav>
-          {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-              {% for category, message in messages %}
-                <div class="alert alert-{{ category }}">
-                  {{ message }}
-                </div>
-              {% endfor %}
-            {% endif %}
-          {% endwith %}		  
-		  <br><br><br><br>
-  {% block content %} {% endblock content %}
-   <!-- Footer -->
-    <section class="footer-section ">
+  {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %}
+  {% for category, message in messages %}
+  <div class="alert alert-{{ category }}">
+    {{ message }}
+  </div>
+  {% endfor %} {% endif %} {% endwith %}
+  <section class="wform" style="margin-bottom:100px; text-align:left">
+    {% block content %} {% endblock content %}
+  </section>
+  <!-- Footer -->
+  <section class="footer-section ">
     <footer>
       <div class="row">
         <!--  -->
@@ -215,5 +187,6 @@ footer{
   </section>
   <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
   <!-- End of Footer -->
-  </body>
-  </html>
+</body>
+
+</html>

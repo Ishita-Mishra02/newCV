@@ -22,12 +22,14 @@ class LoginForm(FlaskForm):
 class details(FlaskForm):   #basic details
 	firstname= StringField('First Name', validators=[DataRequired(), Length(min=2, max=25)])
 	lastname= StringField('Last Name', validators=[DataRequired(), Length(min=2, max=25)])
-
+	email= StringField('Email',
+						validators=[DataRequired(), Email()], render_kw={"placeholder": "123@email.com"})
 	phone = StringField('Phone', validators=[DataRequired()])
 
-	profession= StringField('Profession', validators=[DataRequired(), Length(min=2, max=25)])
+	profession= StringField('Profession', validators=[DataRequired(), Length(min=2, max=25)], render_kw={"placeholder": "Profession"})
 	city= StringField('E-mail(to be written on CV)', validators=[DataRequired(), Length(min=2, max=25)])
 	state= StringField('State', validators=[DataRequired(), Length(min=2, max=25)])
+	zip= StringField('State', validators=[DataRequired(), Length(min=2, max=25)])
 	submit= SubmitField('Next')
 
 class skills(FlaskForm):    #skills+aoi+hobbies

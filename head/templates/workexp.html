@@ -1,11 +1,9 @@
-{% extends "layout2.html" %}
-{% block content %} 
-
-		<section class="wform">
-		<div class="regform"><h1>Projects and Work experiences</h1></div>
-		<div class="main">
-		<form method="POST" action="">
-		<font color='white'><b>
+{% extends "layout2.html" %} {% block content %}
+<div class="regform" style="border-radius:0px">
+  <h1>Projects and Work experiences</h1></div>
+<div class="main">
+  <form method="POST" action="">
+    <font color='white'><b>
 		{{ form.hidden_tag() }}
 		<div id="name">
 		<h2 class="name">PROJECTS</h2>
@@ -15,7 +13,7 @@
 
 			{{ form.p2.label }}{{ form.p2(size=70) }}
 			<br>
-			{{ form.p2.label }}{{ form.p3(size=70) }}		
+			{{ form.p2.label }}{{ form.p3(size=70) }}
 		<br>
 		</div>
 		<br>
@@ -25,10 +23,10 @@
 		<br>
 
 			{{ form.w1.label }}{{ form.w1(size=70) }}
-			<br>	
+			<br>
 			{{ form.w2.label }}{{ form.w2(size=70) }}
 			<br>
-			{{ form.w3.label }}{{ form.w3(size=70) }}		
+			{{ form.w3.label }}{{ form.w3(size=70) }}
 		<br>
 		</div>
 		<br><br>
@@ -40,9 +38,9 @@
 			<br>
 			{{ form.o2.label }}{{ form.o2(size=70) }}
 			<br>
-			{{ form.o3.label }}{{ form.o3(size=70) }}	
+			{{ form.o3.label }}{{ form.o3(size=70) }}
 		<br>
-			{{ form.o4.label }}{{ form.o4(size=70) }}			
+			{{ form.o4.label }}{{ form.o4(size=70) }}
 		<br>
 		</div>
 		<br>
@@ -56,5 +54,4 @@
 
 		</form>
 		</div>
-		</section>
 {% endblock content %}
