@@ -1,0 +1,52 @@
+{% extends "layout2.html" %}
+{% block content %} 
+
+		<section class="wform">
+		<div class="regform"><h1>Basic Details</h1></div>
+		<div class="main">
+		<form method="POST" action="">
+		<font color='white'><b>
+		{{ form.hidden_tag() }}
+		<div id="name">
+		<h2 class="name">Name</h2>
+		<label class="firstlabel">First name</label>
+			{{ form.firstname }}
+			<br>
+		<label class="lastlabel">  Last name</label>	
+			{{form.lastname}}
+		</div>
+		<h2 class="name">Profession</h2>
+			{{ form.profession }}
+		
+
+		<h2 class="name">Email</h2>
+			{{ form.email }}
+
+		<h2 class="name">Phone</h2>
+		<label class="area_code">Area Code</label><input class="code" name="area_code">  
+		
+		<br>
+			{{ form.phone.label }}
+			{{ form.phone }}
+
+		<div id="name">
+		<h2 class="name">City</h2>
+			{{ form.city }}
+		<h2 class="name">State/Province</h2>
+			{{ form.state }}
+		</div>
+		</font></b>
+		<br>
+
+		</label>
+		<br>
+		<br>
+		<div class="buttons">
+		<div><a id="first-link" onclick="window.location.href='{{ url_for('home') }}';">Back</a></div>
+		{{ form.submit(class="btn btn-default btn-block signin-btn", id="first-link") }}
+		</div>
+
+		</form>
+
+		</section>
+{% endblock content %}

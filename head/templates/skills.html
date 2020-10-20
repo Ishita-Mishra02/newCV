@@ -1,0 +1,40 @@
+{% extends "layout2.html" %}
+{% block content %} 
+
+		<section class="wform">
+		<div class="regform"><h1>Skills,Areas of Interest and Hobbies</h1></div>
+		<div class="main">
+		<form method="POST" action="">
+		<font color='white'><b>
+		{{ form.hidden_tag() }}
+		<div id="name">
+		<h2 class="name">SKILLS</h2>
+		<label class="firstlabel">Skills(Start filling from 1st box,minimum 1 to be filled)</label><br>
+			{{ form.s1 }}
+			{{ form.s2 }}
+			{{ form.s3 }}
+		<br>
+		</div>
+		<div id="name">
+		<label class="firstlabel">Areas of Interest(Start filling from 1st box,minimum 1 to be filled)</label><br>
+			{{ form.a1 }}
+			{{ form.a2 }}
+			{{ form.a3 }}
+		<br>
+		</div>
+		<label class="firstlabel">Hobbies(Start filling from 1st box,minimum 1 to be filled)</label><br>
+			{{ form.h1 }}
+			{{ form.h2 }}
+			{{ form.h3 }}
+		<br>		
+		</font></b>
+		<br>
+		<br>
+		<div class="buttons">
+		<div><a id="first-link" onclick="window.location.href='{{ url_for('education1') }}';">Back</a></div>
+		{{ form.submit(class="btn btn-default btn-block signin-btn", id="first-link") }}
+		</div>
+		</form>
+
+		</section>
+{% endblock content %}
