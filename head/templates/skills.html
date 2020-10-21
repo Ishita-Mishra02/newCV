@@ -1,6 +1,6 @@
 {% extends "layout2.html" %} {% block content %}
-<div class="regform" style="border-radius:0px">
-  <h1>Skills,Areas of Interest and Hobbies</h1></div>
+
+<!-- <h1>Skills,Areas of Interest and Hobbies</h1></div>
 <div class="main">
   <form method="POST" action="">
     <font color='white'><b>
@@ -34,7 +34,65 @@
       </div>
       {{ form.submit(class="btn btn-default btn-block signin-btn", id="first-link") }}
     </div>
-  </form>
+  </form> -->
+<form class="" action="" method="post">
+  <div class="container" style="margin:100px">
+    <div class="row">
+      <div class="col-md-8 order-md-1">
+        <h2 class="mb-3">Skills, Areas of Interest and Hobbies</h2>
+
+        <hr class="mb-4">
+        <form class="needs-validation" novalidate>
+					<label for="skills"><big>Skills</big> (Start filling from 1st box,minimum 1 to be filled)</label>
+          <div class="row">
+            <div class="col-md-4 mb-3">
+								{{ form.s1  (class="form-control")}}
+            </div>
+            <div class="col-md-4 mb-3">
+							{{ form.s2  (class="form-control")}}
+            </div>
+            <div class="col-md-4 mb-3">
+							{{ form.s3  (class="form-control")}}
+            </div>
+          </div>
+          <br>
+
+          <label for="interest"><big>Areas of Interest</big> (Start filling from 1st box,minimum 1 to be filled)</label>
+          <div class="row">
+            <div class="col-md-4 mb-3">
+							{{ form.a1  (class="form-control")}}
+            </div>
+            <div class="col-md-4 mb-3">
+							{{ form.a2  (class="form-control")}}
+            </div>
+            <div class="col-md-4 mb-3">
+							{{ form.a3  (class="form-control")}}
+            </div>
+          </div>
+          <br>
+
+          <label for="hobbies"><big>Hobbies</big> (Start filling from 1st box,minimum 1 to be filled)</label>
+          <div class="row">
+            <div class="col-md-4 mb-3">
+							{{ form.h1  (class="form-control")}}
+            </div>
+            <div class="col-md-4 mb-3">
+							{{ form.h2  (class="form-control")}}
+            </div>
+            <div class="col-md-4 mb-3">
+							{{ form.h3  (class="form-control")}}
+            </div>
+          </div>
+          <br>
+          <p>
+						<a class="btn btn-secondary btn-lg" role="button" style="color:white" onclick="window.location.href='{{ url_for('education1') }}';">Back</a>
+						{{ form.submit(class="btn btn-primary btn-lg") }}
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</form>
 
 
-  {% endblock content %}
+{% endblock content %}

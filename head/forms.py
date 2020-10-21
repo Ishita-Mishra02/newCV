@@ -27,9 +27,9 @@ class details(FlaskForm):   #basic details
 	phone = StringField('Phone', validators=[DataRequired()])
 
 	profession= StringField('Profession', validators=[DataRequired(), Length(min=2, max=25)], render_kw={"placeholder": "Profession"})
-	city= StringField('E-mail(to be written on CV)', validators=[DataRequired(), Length(min=2, max=25)])
+	city= StringField('City', validators=[DataRequired(), Length(min=2, max=25)])
 	state= StringField('State', validators=[DataRequired(), Length(min=2, max=25)])
-	zip= StringField('State', validators=[DataRequired(), Length(min=2, max=25)])
+	zip= StringField('Zip', validators=[DataRequired(), Length(min=2, max=25)])
 	submit= SubmitField('Next')
 
 class skills(FlaskForm):    #skills+aoi+hobbies
@@ -48,21 +48,21 @@ class skills(FlaskForm):    #skills+aoi+hobbies
 	submit= SubmitField('Next')
 
 class education(FlaskForm): #school +college
-	c10 = StringField('Class-10/ Matric School', validators=[DataRequired(), Length(min=2,max=70)])
-	g10= DecimalField('Class-10 percentage', validators=[DataRequired()])
-	y10= IntegerField('Year of completing Class-10',validators=[DataRequired()])
+	c10 = StringField('Matric School', validators=[DataRequired(), Length(min=2,max=70)])
+	g10= DecimalField('Percentage', validators=[DataRequired()])
+	y10= IntegerField('Year of completion',validators=[DataRequired()])
 
-	c12 = StringField('Class-12/Post Matric School', validators=[DataRequired(), Length(min=2,max=70)])
-	g12= DecimalField('Class-12 percentage', validators=[DataRequired()])
-	y12= IntegerField('Year of completing Class-12',validators=[DataRequired()])
+	c12 = StringField('Post Matric School', validators=[DataRequired(), Length(min=2,max=70)])
+	g12= DecimalField('Percentage', validators=[DataRequired()])
+	y12= IntegerField('Year of completion',validators=[DataRequired()])
 
-	pg = StringField('Post Graduation Institute')
-	gpg= DecimalField('Post Graduation CGPA')
-	ypg= IntegerField('Year of completing Post Graduation')
+	pg = StringField('Institute')
+	gpg= DecimalField('CGPA')
+	ypg= IntegerField('Year of completion')
 
-	g = StringField('Graduation Institute')
-	gg= DecimalField('Graduation CGPA')
-	yg= IntegerField('Year of completing Graduation')
+	g = StringField('Institute')
+	gg= DecimalField('CGPA')
+	yg= IntegerField('Year of completion')
 	submit= SubmitField('Next')
 
 class workhistory(FlaskForm):  #projects+work_exp

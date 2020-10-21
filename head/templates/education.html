@@ -1,62 +1,88 @@
-{% extends "layout2.html" %}
-{% block content %}
-		<div class="regform" style="border-radius:0px"><h1>Education Details</h1></div>
-		<div class="main form-group">
-		<form method="POST" action="">
-		{{ form.hidden_tag() }}
-		<div id="name">
-		<h2 class="name">CLASS 10</h2>
-		<font color='white'><b>
-			{{ form.c10.label }}
-			{{ form.c10 }}
-			<br>
-			{{form.g10.label }}
-			{{ form.g10 }}
-			<br>
-			{{ form.y10.label }}
-			{{ form.y10 }}
-			<br>
-		</div>
-		<h2 class="name">CLASS 12</h2>
+{% extends "layout2.html" %} {% block content %}
+<form method="Post" action="">
+  <div class="container" style="margin:100px">
+    <div class="row">
+      <div class="col-md-8 order-md-1">
+        <h2 class="mb-3">Education</h2>
 
-			{{ form.c12.label }}
-			{{ form.c12 }}
-			<br>
-			{{form.g12.label }}
-			{{ form.g12 }}
-			<br>
-			{{ form.y12.label }}
-			{{ form.y12 }}
-			<br>
+        <hr class="mb-4">
+        <form class="needs-validation" novalidate>
+          <h5>Class 10</h5>
+          <div class="row">
+            <div class="col-md-12 mb-3">
+							{{form.c10.label}}
+							{{ form.c10  (class="form-control")}}
+            </div>
+            <div class="col-md-12 mb-3">
+							{{form.g10.label}}
+							{{ form.g10  (class="form-control")}}
+            </div>
+            <div class="col-md-12 mb-3">
+							{{form.y10.label}}
+							{{ form.y10  (class="form-control")}}
+            </div>
+          </div>
+					<br>
 
-		<h2 class="name">Graduation details</h2>
-			{{ form.g.label }}
-			{{ form.g }}
-			<br>
-			{{form.gg.label }}
-			{{ form.gg }}
-			<br>
-			{{ form.yg.label }}
-			{{ form.yg }}
-			<br>
-		<h2 class="name">Post Graduation Details</h2>
-			{{ form.pg.label }}
-			{{ form.pg }}
-			<br>
-			{{form.gpg.label }}
-			{{ form.gpg }}
-			<br>
-			{{ form.ypg.label }}
-			{{ form.ypg }}
-			<br>
-		</font>
-		</b>
-		<div id="name">
-		<div class="buttons">
-		<div><a id="first-link" href="index.html">Back</a></div>
-		{{ form.submit(id="first-link") }}
-		</div>
-		</div>
-		</form>
-		</div>
+          <h5>Class 12</h5>
+          <div class="row">
+            <div class="col-md-12 mb-3">
+							{{form.c12.label}}
+								{{ form.c12  (class="form-control")}}
+            </div>
+            <div class="col-md-12 mb-3">
+							{{form.g12.label}}
+								{{ form.g12  (class="form-control")}}
+            </div>
+            <div class="col-md-12 mb-3">
+							{{form.y12.label}}
+								{{ form.y12  (class="form-control")}}
+            </div>
+          </div>
+					<br>
+
+          <h5>Graduation Details</h5>
+          <div class="row">
+            <div class="col-md-12 mb-3">
+							{{form.g.label}}
+								{{ form.g (class="form-control")}}
+            </div>
+            <div class="col-md-12 mb-3">
+							{{form.gg.label}}
+							{{ form.gg (class="form-control")}}
+            </div>
+            <div class="col-md-12 mb-3">
+							{{form.yg.label}}
+							{{ form.yg (class="form-control")}}
+            </div>
+          </div>
+					<br>
+
+          <h5>Post Graduation Details</h5>
+          <div class="row">
+            <div class="col-md-12 mb-3">
+							{{form.pg.label}}
+							{{ form.pg (class="form-control")}}
+            </div>
+            <div class="col-md-12 mb-3">
+							{{form.gpg.label}}
+							{{ form.gpg (class="form-control")}}
+            </div>
+            <div class="col-md-12 mb-3">
+							{{form.ypg.label}}
+							{{ form.ypg (class="form-control")}}
+            </div>
+          </div>
+					<br>
+          <p>
+						<a class="btn btn-secondary btn-lg" role="button" style="color:white" onclick="window.location.href='{{ url_for('details1') }}';">Back</a>
+            <!-- <button class="btn btn-secondary btn-lg" type="submit">Back</button> -->
+						{{ form.submit(class="btn btn-primary btn-lg") }}
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</form>
+
 {% endblock content %}

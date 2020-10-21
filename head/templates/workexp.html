@@ -1,57 +1,62 @@
 {% extends "layout2.html" %} {% block content %}
-<div class="regform" style="border-radius:0px">
-  <h1>Projects and Work experiences</h1></div>
-<div class="main">
-  <form method="POST" action="">
-    <font color='white'><b>
-		{{ form.hidden_tag() }}
-		<div id="name">
-		<h2 class="name">PROJECTS</h2>
-		<br>
-			{{ form.p1.label }}{{ form.p1(size=70) }}
-			<br>
+<form method="POST" action="">
+  <div class="container" style="margin:100px">
+    <div class="row">
+      <div class="col-md-8 order-md-1">
+        <h2 class="mb-3">Projects and Work Experiences</h2>
 
-			{{ form.p2.label }}{{ form.p2(size=70) }}
-			<br>
-			{{ form.p2.label }}{{ form.p3(size=70) }}
-		<br>
-		</div>
-		<br>
-		<br>
-		<div id="name">
-		<h2 class="name">Work/Internship Experience</h2>
-		<br>
+        <hr class="mb-4">
+        <form class="needs-validation" novalidate>
+          <h5>Projects</h5>
+          <div class="row">
+            <div class="col-md-12 mb-3">
+              {{ form.p1 (class="form-control")}}
+            </div>
+            <div class="col-md-12 mb-3">
+              {{ form.p2 (class="form-control")}}
+            </div>
+            <div class="col-md-12 mb-3">
+              {{ form.p3 (class="form-control")}}
+            </div>
+          </div>
+          <br>
 
-			{{ form.w1.label }}{{ form.w1(size=70) }}
-			<br>
-			{{ form.w2.label }}{{ form.w2(size=70) }}
-			<br>
-			{{ form.w3.label }}{{ form.w3(size=70) }}
-		<br>
-		</div>
-		<br><br>
-		<div id="name">
-		<h2 class='name'>Other Activities- Technical/Cultural</h2>
-		<br>
+          <h5>Work/Internship Experience</h5>
+          <div class="row">
+            <div class="col-md-12 mb-3">
+              {{ form.w1 (class="form-control")}}
+            </div>
+            <div class="col-md-12 mb-3">
+              {{ form.w2 (class="form-control")}}
+            </div>
+            <div class="col-md-12 mb-3">
+              {{ form.w3 (class="form-control")}}
+            </div>
+          </div>
+          <br>
 
-			{{ form.o1.label }}{{ form.o1(size=70) }}
-			<br>
-			{{ form.o2.label }}{{ form.o2(size=70) }}
-			<br>
-			{{ form.o3.label }}{{ form.o3(size=70) }}
-		<br>
-			{{ form.o4.label }}{{ form.o4(size=70) }}
-		<br>
-		</div>
-		<br>
-		<br>
-		<br>
-		<br>
-		<div class="buttons">
-		<div><a id="first-link" onclick="window.location.href='{{ url_for('skills1') }}';">Back</a></div>
-		{{ form.submit(class="btn btn-default btn-block signin-btn", id="first-link") }}
-		</div>
+          <h5>Other Activities- Technical/Cultural</h5>
+          <div class="row">
+            <div class="col-md-12 mb-3">
+              {{ form.p1 (class="form-control")}}
+            </div>
+            <div class="col-md-12 mb-3">
+              {{ form.o2 (class="form-control")}}
+            </div>
+            <div class="col-md-12 mb-3">
+              {{ form.o3 (class="form-control")}}
+            </div>
+          </div>
+          <br>
 
-		</form>
-		</div>
+          <p>
+            <a class="btn btn-secondary btn-lg" role="button" style="color:white" onclick="window.location.href='{{ url_for('skills1') }}';">Back</a>
+            {{ form.submit(class="btn btn-primary btn-lg") }}
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</form>
+
 {% endblock content %}

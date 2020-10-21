@@ -1,59 +1,64 @@
 {% extends "layout2.html" %} {% block content %}
-  <form method="POST" action="">
-		{{ form.hidden_tag() }}
-		<div class="container" style="margin:100px">
-		      <div class="row">
-		        <div class="col-md-8 order-md-1">
-		          <h2 class="mb-3">Basic Details</h2>
+<form method="POST" action="">
+  {{ form.hidden_tag() }}
+  <div class="container" style="margin:100px">
+    <div class="row">
+      <div class="col-md-8 order-md-1">
+        <h2 class="mb-3">Basic Details</h2>
 
-		            <hr class="mb-4">
-		          <form class="needs-validation" novalidate>
-		            <div class="row">
-		              <div class="col-md-6 mb-3">
-		                <label for="firstName">First name</label>
-										{{ form.firstname (class="form-control") }}
-		              </div>
-		              <div class="col-md-6 mb-3">
-		                <label for="lastName">Last name</label>
-											{{form.lastname (class="form-control")}}
-		              </div>
-		            </div>
+        <hr class="mb-4">
+        <form class="needs-validation" novalidate>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              {{form.firstname.label}}
+              {{ form.firstname (class="form-control") }}
+            </div>
+            <div class="col-md-6 mb-3">
+              {{form.lastname.label}}
+              {{form.lastname (class="form-control")}}
+            </div>
+          </div>
 
-		            <div class="mb-3">
-		              <label for="profession">Profession</label>
-										{{ form.profession (class="form-control")}}
-		            </div>
+          <div class="mb-3">
+            {{form.profession.label}}
+            {{ form.profession (class="form-control")}}
+          </div>
 
-		            <div class="mb-3">
-		              <label for="email">Email</label>
-									{{form.email (class="form-control")}}
-		              <!-- <input type="email" class="form-control" id="email" placeholder="you@example.com"> -->
-		            </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              {{form.email.label}}
+              {{form.email (class="form-control")}}
+              <!-- <input type="email" class="form-control" id="email" placeholder="you@example.com"> -->
+            </div>
 
-		            <div class="mb-3">
-		              <label for="phone">Phone</label>
-									{{ form.phone (class="form-control")}}
-		            </div>
+            <div class="col-md-6 mb-3">
+              {{form.phone.label}}
+              {{ form.phone (class="form-control")}}
+            </div>
+          </div>
 
 
-
-		            <div class="row">
-		              <div class="col-md-5 mb-3">
-		                <label for="city">City</label>
-										{{ form.city (class="form-control")}}
-		              </div>
-		              <div class="col-md-4 mb-3">
-		                <label for="state">State</label>
-										{{ form.state (class="form-control")}}
-		              </div>
-		              <div class="col-md-3 mb-3">
-		                <label for="zip">Zip</label>
-										{{ form.zip (class="form-control")}}
-		              </div>
-		            </div>
-		            <p style="margin-top:30px">
-		                <a class="btn btn-secondary btn-lg" role="button" style="color:white" onclick="window.location.href='{{ url_for('home') }}';">Back</a>
-										 {{ form.submit(class="btn btn-primary btn-lg") }}
-		            </p>
-		          </form>
-  {% endblock content %}
+          <div class="row">
+            <div class="col-md-5 mb-3">
+							{{form.city.label}}
+              {{ form.city (class="form-control")}}
+            </div>
+            <div class="col-md-4 mb-3">
+							{{form.state.label}}
+              {{ form.state (class="form-control")}}
+            </div>
+            <div class="col-md-3 mb-3">
+							{{form.zip.label}}
+              {{ form.zip (class="form-control")}}
+            </div>
+          </div>
+          <p style="margin-top:30px">
+            <a class="btn btn-secondary btn-lg" role="button" style="color:white" onclick="window.location.href='{{ url_for('home') }}';">Back</a>
+            {{ form.submit(class="btn btn-primary btn-lg") }}
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</form>
+{% endblock content %}
